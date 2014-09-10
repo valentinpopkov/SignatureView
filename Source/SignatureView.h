@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SignedBlock)();
+
 @interface SignatureView : UIImageView
 
 @property (nonatomic, strong) UIColor *foregroundLineColor;
@@ -17,6 +19,8 @@
 @property (nonatomic, assign) CGFloat backgroundLineWidth;
 
 @property (nonatomic, strong) UILongPressGestureRecognizer *recognizer;
+
+@property (nonatomic, strong) SignedBlock signedBlock;
 
 - (void)setLineColor:(UIColor *)color;
 - (void)setLineWidth:(CGFloat)width;

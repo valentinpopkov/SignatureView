@@ -141,6 +141,10 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    if (self.signedBlock) {
+        self.signedBlock();
+    }
+    
     NSArray *generalizedPoints = [self _douglasPeucker:self.drawnPoints epsilon:2];
     NSArray *splinePoints = [self _catmullRomSpline:generalizedPoints segments:4];
     
